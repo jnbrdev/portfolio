@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import '@fontsource/raleway';
+
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+  font-family: 'Raleway', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes loop-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-loop-scroll {
+  animation: loop-scroll 30s linear infinite;
+  display: inline-flex;
+  width: max-content;
+}
+
+.animate-loop-scroll:hover {
+  animation-play-state: paused;
+}
+
+.glass-effect {
+  @apply bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg;
+}
+
+.glass-border {
+  @apply border border-white border-opacity-20;
+}
+
