@@ -41,15 +41,15 @@ export default function Hero() {
   return (
     <section id="home" className="bg-gray-900 text-white min-h-screen flex items-center">
       <div className="container mx-auto px-4">
-        <div className="text-center">
-          <h1 className="text-6xl font-bold mb-4">Jonieber Dela Victoria</h1>
-          <h2 className="text-3xl mb-8">Full Stack Web Developer</h2>
+      <div className="text-center">
+          <h1 className="text-4xl sm:text-6xl font-bold mb-4">Jonieber Dela Victoria</h1>
+          <h2 className="text-2xl sm:text-3xl mb-8">Full Stack Web Developer</h2>
           <div className="flex justify-center space-x-6 mb-12">
             <Link href="https://github.com/jnbrdev" target="_blank" rel="noopener noreferrer">
-              <FaGithub className="text-5xl hover:text-gray-400 transition-colors duration-300" />
+              <FaGithub className="text-4xl sm:text-5xl hover:text-gray-400 transition-colors duration-300" />
             </Link>
             <Link href="https://linkedin.com/in/jonieber-dela-victoria" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin className="text-5xl hover:text-gray-400 transition-colors duration-300" />
+              <FaLinkedin className="text-4xl sm:text-5xl hover:text-gray-400 transition-colors duration-300" />
             </Link>
           </div>
 
