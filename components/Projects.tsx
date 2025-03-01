@@ -6,9 +6,9 @@ import { motion } from "framer-motion"
 
 const projects = [
   { id: 1, name: "Salon Management App", image: "/salon-admin.png", link: "#" },
-  { id: 2, name: "Tapik Profile", image: "/tapik.png", link: "#" },
+  { id: 2, name: "Tapik Profile", image: "/tapik.png", link: "https://my.tapik.ph/tpaf94ur" },
   { id: 3, name: "BrokerageNow", image: "/broker.png", link: "#" },
-  { id: 4, name: "Ecommerce", image: "/shoplifty.png", link: "#" },
+  { id: 4, name: "Ecommerce", image: "/shoplifty.png", link: "https://ecommerce-app-react-wheat.vercel.app" },
   { id: 5, name: "Blog", image: "/blog.png", link: "#" },
 ]
 

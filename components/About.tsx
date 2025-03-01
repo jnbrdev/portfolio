@@ -61,8 +61,6 @@ export default function About() {
                           index % 2 === 0 ? "md:mr-auto" : "md:ml-auto"
                         }`}
                       >
-                        {/* Circle indicator */}
-                        <div className="absolute top-4 -left-6 md:top-4 md:-right-6 w-3 h-3 rounded-full bg-white transform translate-x-1/2 md:translate-x-1/2"></div>
 
                         {/* Content */}
                         <div className="bg-white/5 rounded-lg p-6 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors duration-300">
@@ -76,8 +74,10 @@ export default function About() {
                   ))}
                 </div>
 
-                {/* Show More Button */}
-                {workExperience.length > 2 && (
+                
+              </div>
+              {/* Show More Button */}
+              {workExperience.length > 2 && (
                   <div className="flex justify-center mt-8">
                     <button
                       onClick={() => setShowAll(!showAll)}
@@ -87,7 +87,6 @@ export default function About() {
                     </button>
                   </div>
                 )}
-              </div>
             </div>
           </GlassCard>
         </motion.div>

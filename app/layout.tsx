@@ -20,7 +20,6 @@ export default function RootLayout({
         <div className="relative z-10">
           <Navbar />
           <main>{children}</main>
-          <Footer />
         </div>
         <div className="fixed inset-0 z-0">
           <div className=" opacity-5 mix-blend-overlay"></div>

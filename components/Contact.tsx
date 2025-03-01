@@ -25,7 +25,6 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <GlassCard className="shadow-xl">
   <div className="min-h-[400px] flex items-center justify-center">
     <div className="text-center">
       <h2 className="text-4xl font-bold mb-12">Contact Me</h2>
@@ -56,7 +55,6 @@ export default function Contact() {
       <p className="text-lg mb-8">Feel free to contact me via Email or LinkedIn!</p>
     </div>
   </div>
-</GlassCard>
 
         </motion.div>
       </div>

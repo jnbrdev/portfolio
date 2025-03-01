@@ -22,7 +22,7 @@ export default function Navbar() {
         <Link href="/" className="text-white text-2xl font-bold">
           JDV
         </Link>
-        <div className="space-x-6">
+        <div className="hidden md:flex space-x-6">
           <Link href="#home" className="text-white hover:text-gray-300">
             Home
           </Link>
@@ -40,4 +40,3 @@ export default function Navbar() {
     </nav>
   )
 }
-
