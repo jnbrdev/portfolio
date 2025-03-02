@@ -47,7 +47,6 @@ export default function Tools() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <GlassCard className="shadow-xl">
             <h2 className="text-4xl font-bold mb-12 text-center">Tools & Technologies</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {tools.map((tool, index) => (
@@ -64,7 +63,6 @@ export default function Tools() {
                 </motion.div>
               ))}
             </div>
-          </GlassCard>
         </motion.div>
       </div>
     </section>
