@@ -28,6 +28,16 @@ const projects = [
   },
   {
     id: 3,
+    name: "Freight Calculator",
+    image: "/freight.png",
+    description: "A brief description of Project 2",
+    details:
+      "A personal project developed using HTML, CSS, JavaScript, and Three.js",
+      tools: ["HTML", "CSS", "Javascript", "Three.js"],
+    link: "https://jnbrdev.github.io/freight-calculator/",
+  },
+  {
+    id: 4,
     name: "BrokerageNow",
     image: "/broker.png",
     description: "A brief description of Project 3",
@@ -37,7 +47,7 @@ const projects = [
     link: "#",
   },
   {
-    id: 4,
+    id: 5,
     name: "E-commerce",
     image: "/shoplifty.png",
     description: "A brief description of Project 4",
@@ -47,7 +57,7 @@ const projects = [
     link: "https://ecommerce-app-react-wheat.vercel.app/products",
   },
   {
-    id: 5,
+    id: 6,
     name: "Blog",
     image: "/blog.png",
     description: "A brief description of Project 5",
@@ -57,7 +67,7 @@ const projects = [
     link: "https://blog-app-frontend-ecru.vercel.app/",
   },
   {
-    id: 6,
+    id: 7,
     name: "Salon Management App",
     image: "/salon-admin.png",
     description: "A brief description of Project 1",
