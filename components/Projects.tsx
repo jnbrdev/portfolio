@@ -8,13 +8,13 @@ import ProjectModal from "./ProjectModal"
 const projects = [
   {
     id: 1,
-    name: "Salon Management App",
-    image: "/salon-admin.png",
+    name: "Urban Shop Landing Page",
+    image: "/urban.png",
     description: "A brief description of Project 1",
     details:
-      "Developed new features and maintain an inhouse app using Laravel, Vue.js HTML, CSS, JavaScript, and Bootstrap. The site is fully responsive, providing an optimal viewing experience on all devices.",
-    tools: ["Laravel", "Vue.js", "Bootstrap", "MySQL", "HTML", "CSS", "Javascript"],
-    link: "#",
+      "Developed a mobile-responsive e-commerce landing page using HTML, CSS, and JavaScript as a personal project.",
+    tools: ["HTML", "CSS", "Javascript"],
+    link: "https://jnbrdev.github.io/urban-ecom-landing/",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const projects = [
     image: "/tapik.png",
     description: "A brief description of Project 2",
     details:
-      "Developed new features and maintain an inhouse app using Laravel, Vue.js HTML, CSS, JavaScript, and Bootstrap. The site is fully responsive, providing an optimal viewing experience on all devices.",
+      "Developed new features and maintain an inhouse app using Laravel, HTML, CSS, JavaScript, and Bootstrap. The site is fully responsive, providing an optimal viewing experience on all devices.",
       tools: ["Laravel", "Bootstrap", "MySQL", "HTML", "CSS", "Javascript"],
     link: "https://my.tapik.ph/tpaf94ur",
   },
@@ -55,6 +55,16 @@ const projects = [
       "The Blog Application provides a user-friendly interface to create, edit, and delete blog posts, as well as view articles in an engaging layout. The project emphasizes clean UI design, seamless navigation, and responsiveness. My role involved designing and developing the frontend using React.js, integrating Bootstrap for styling, and ensuring smooth interactivity with JavaScript. The backend is built with Express.js and MongoDB, providing a robust and scalable architecture for handling user data, authentication, and content storage.",
       tools: ["React.js", "Bootstrap", "HTML", "CSS", "Javascript", "Express.js", "MongoDB"],
     link: "https://blog-app-frontend-ecru.vercel.app/",
+  },
+  {
+    id: 6,
+    name: "Salon Management App",
+    image: "/salon-admin.png",
+    description: "A brief description of Project 1",
+    details:
+      "Developed new features and maintain an inhouse app using Laravel, Vue.js HTML, CSS, JavaScript, and Bootstrap. The site is fully responsive, providing an optimal viewing experience on all devices.",
+    tools: ["Laravel", "Vue.js", "Bootstrap", "MySQL", "HTML", "CSS", "Javascript"],
+    link: "#",
   },
 ]
 
