@@ -28,7 +28,7 @@ const projects = [
   },
   {
     id: 3,
-    name: "Freight Calculator",
+    name: "Box Calculator",
     image: "/freight.png",
     description: "A brief description of Project 2",
     details:
