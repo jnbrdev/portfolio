@@ -1,71 +1,37 @@
-"use client"
-import {
-  FaLaravel,
-  FaNodeJs,
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaBootstrap,
-  FaVuejs,
-  FaReact,
-  FaPhp,
-  FaGitAlt,
-  FaAws,
-} from "react-icons/fa"
-import { SiExpress, SiCpanel, SiVercel, SiPostman, SiMysql, SiMongodb, SiInertia } from "react-icons/si"
-import GlassCard from "./GlassCard"
-import { motion } from "framer-motion"
-
-const tools = [
-  { name: "Laravel", icon: FaLaravel },
-  { name: "Node.js", icon: FaNodeJs },
-  { name: "Express.js", icon: SiExpress },
-  { name: "HTML5", icon: FaHtml5 },
-  { name: "CSS3", icon: FaCss3Alt },
-  { name: "JavaScript", icon: FaJs },
-  { name: "Bootstrap", icon: FaBootstrap },
-  { name: "Vue.js", icon: FaVuejs },
-  { name: "React", icon: FaReact },
-  { name: "PHP", icon: FaPhp },
-  { name: "Git", icon: FaGitAlt },
-  { name: "AWS", icon: FaAws },
-  { name: "cPanel", icon: SiCpanel },
-  { name: "Vercel", icon: SiVercel },
-  { name: "Postman", icon: SiPostman },
-  { name: "MySQL", icon: SiMysql },
-  { name: "MongoDB", icon: SiMongodb },
-  { name: "Inertia.js", icon: SiInertia }, // Added Inertia.js
-]
+import Section, { Reveal, SectionHeading } from "./Section"
+import { toolGroups } from "@/lib/data"
 
 export default function Tools() {
   return (
-    <section id="tools" className="bg-gray-900 text-white py-20">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-            <h2 className="text-4xl font-bold mb-12 text-center">Tools & Technologies</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {tools.map((tool, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.05 }}
-                  className="flex flex-col items-center justify-center p-4 hover:bg-white/5 rounded-lg transition-colors duration-300"
-                >
-                  <tool.icon className="text-4xl mb-2" />
-                  <span className="text-sm text-gray-300">{tool.name}</span>
-                </motion.div>
-              ))}
+    <Section id="tools" className="border-y border-white/5 bg-white/[0.015]">
+      <SectionHeading
+        eyebrow="Stack"
+        title="Tools & technologies"
+        intro="The languages, frameworks and platforms I reach for to design, build and ship."
+      />
+
+      <div className="grid gap-6 sm:grid-cols-2">
+        {toolGroups.map((group, gi) => (
+          <Reveal key={group.title} delay={gi * 0.08}>
+            <div className="h-full rounded-2xl border border-white/10 bg-card p-6">
+              <h3 className="mb-5 font-display text-sm font-semibold uppercase tracking-wider text-zinc-400">
+                {group.title}
+              </h3>
+              <ul className="flex flex-wrap gap-2">
+                {group.tools.map((tool) => (
+                  <li
+                    key={tool.name}
+                    className="group inline-flex items-center gap-2 rounded-xl border border-white/5 bg-white/[0.03] px-3 py-2 text-sm text-zinc-200 transition hover:border-primary/40 hover:bg-primary/10"
+                  >
+                    <tool.icon className="h-4 w-4 text-zinc-400 transition group-hover:text-primary" />
+                    {tool.name}
+                  </li>
+                ))}
+              </ul>
             </div>
-        </motion.div>
+          </Reveal>
+        ))}
       </div>
-    </section>
+    </Section>
   )
 }
-

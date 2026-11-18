@@ -1,137 +1,93 @@
 "use client"
 import Image from "next/image"
-import GlassCard from "./GlassCard"
-import { motion } from "framer-motion"
 import { useState } from "react"
+import { ArrowUpRight, Maximize2 } from "lucide-react"
+import Section, { Reveal, SectionHeading } from "./Section"
 import ProjectModal from "./ProjectModal"
-
-const projects = [
-  {
-    id: 1,
-    name: "Urban Shop Landing Page",
-    image: "/urban.png",
-    description: "A brief description of Project 1",
-    details:
-      "Developed a mobile-responsive e-commerce landing page using HTML, CSS, and JavaScript as a personal project.",
-    tools: ["HTML", "CSS", "Javascript"],
-    link: "https://jnbrdev.github.io/urban-ecom-landing/",
-  },
-  {
-    id: 2,
-    name: "Tapik Profile",
-    image: "/tapik.png",
-    description: "A brief description of Project 2",
-    details:
-      "Developed new features and maintain an inhouse app using Laravel, HTML, CSS, JavaScript, and Bootstrap. The site is fully responsive, providing an optimal viewing experience on all devices.",
-      tools: ["Laravel", "Bootstrap", "MySQL", "HTML", "CSS", "Javascript"],
-    link: "https://my.tapik.ph/tpaf94ur",
-  },
-  {
-    id: 3,
-    name: "Box Calculator",
-    image: "/freight.png",
-    description: "A brief description of Project 2",
-    details:
-      "A personal project developed using HTML, CSS, JavaScript, and Three.js",
-      tools: ["HTML", "CSS", "Javascript", "Three.js"],
-    link: "https://jnbrdev.github.io/freight-calculator/",
-  },
-  {
-    id: 4,
-    name: "BrokerageNow",
-    image: "/broker.png",
-    description: "A brief description of Project 3",
-    details:
-      "Implemented the frontend UI/UX based on the design provided by the client, ensuring accuracy and adherence to their specifications. For styling and layout design, CSS and bootstrap was used to achieve a responsive and visually cohesive interface.",
-    tools: ["Laravel", "HTML", "CSS", "Javascript", "Bootstrap"],
-    link: "#",
-  },
-  {
-    id: 5,
-    name: "E-commerce",
-    image: "/shoplifty.png",
-    description: "A brief description of Project 4",
-    details:
-      "Developed a full-stack E-commerce app using React.js, integrating the E-commerce API app (capstone 2). The app features a fully functional product directory, cart system, and secure payment processing via Xendit.",
-    tools: ["React.js", "Bootstrap", "HTML", "CSS", "Javascript"],
-    link: "https://ecommerce-app-react-wheat.vercel.app/products",
-  },
-  {
-    id: 6,
-    name: "Blog",
-    image: "/blog.png",
-    description: "A brief description of Project 5",
-    details:
-      "The Blog Application provides a user-friendly interface to create, edit, and delete blog posts, as well as view articles in an engaging layout. The project emphasizes clean UI design, seamless navigation, and responsiveness. My role involved designing and developing the frontend using React.js, integrating Bootstrap for styling, and ensuring smooth interactivity with JavaScript. The backend is built with Express.js and MongoDB, providing a robust and scalable architecture for handling user data, authentication, and content storage.",
-      tools: ["React.js", "Bootstrap", "HTML", "CSS", "Javascript", "Express.js", "MongoDB"],
-    link: "https://blog-app-frontend-ecru.vercel.app/",
-  },
-  {
-    id: 7,
-    name: "Salon Management App",
-    image: "/salon-admin.png",
-    description: "A brief description of Project 1",
-    details:
-      "Developed new features and maintain an inhouse app using Laravel, Vue.js HTML, CSS, JavaScript, and Bootstrap. The site is fully responsive, providing an optimal viewing experience on all devices.",
-    tools: ["Laravel", "Vue.js", "Bootstrap", "MySQL", "HTML", "CSS", "Javascript"],
-    link: "#",
-  },
-]
+import { projects, type Project } from "@/lib/data"
 
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState<(typeof projects)[0] | null>(null)
+  const [selected, setSelected] = useState<Project | null>(null)
 
   return (
-    <section id="projects" className="bg-gray-900 text-white py-20">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <GlassCard className="shadow-xl">
-            <h2 className="text-4xl font-bold mb-12 text-center">Projects</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project, index) => (
-                <motion.div
-                  key={project.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="relative group overflow-hidden rounded-lg"
-                >
-                  <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.name}
-                    width={400}
-                    height={300}
-                    className="w-full h-auto"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="text-center">
-                      <h3 className="text-xl font-bold mb-2">{project.name}</h3>
-                      <button
-                        onClick={() => setSelectedProject(project)}
-                        className="inline-block bg-white text-black px-4 py-2 rounded hover:bg-gray-200 transition-colors duration-300"
-                      >
-                        Description
-                      </button>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </GlassCard>
-        </motion.div>
+    <Section id="projects">
+      <SectionHeading
+        eyebrow="Selected work"
+        title="Projects"
+        intro="A mix of client work and personal builds, from in-house business apps to full-stack side projects."
+      />
+
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {projects.map((project, i) => (
+          <Reveal key={project.id} delay={(i % 3) * 0.08}>
+            <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-card transition duration-300 hover:-translate-y-1 hover:border-white/20 hover:shadow-2xl hover:shadow-primary/5">
+              <button
+                type="button"
+                onClick={() => setSelected(project)}
+                className="relative block aspect-[16/10] overflow-hidden bg-zinc-900 text-left"
+                aria-label={`Open details for ${project.name}`}
+              >
+                <Image
+                  src={project.image}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover object-top transition duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+                <span className="absolute right-3 top-3 rounded-full bg-black/60 p-2 text-white opacity-0 backdrop-blur transition group-hover:opacity-100">
+                  <Maximize2 className="h-4 w-4" />
+                </span>
+              </button>
+
+              <div className="flex flex-1 flex-col p-5">
+                <div className="mb-2 flex items-center justify-between gap-3">
+                  <h3 className="font-display text-lg font-semibold text-white">{project.name}</h3>
+                  <span className="shrink-0 rounded-full border border-white/10 px-2 py-0.5 text-[11px] text-zinc-400">
+                    {project.category}
+                  </span>
+                </div>
+                <p className="text-sm leading-relaxed text-muted-foreground">{project.summary}</p>
+
+                <ul className="mt-4 flex flex-wrap gap-1.5">
+                  {project.tools.slice(0, 4).map((t) => (
+                    <li key={t} className="rounded-md bg-white/5 px-2 py-0.5 text-xs text-zinc-300">
+                      {t}
+                    </li>
+                  ))}
+                  {project.tools.length > 4 && (
+                    <li className="rounded-md px-1 py-0.5 text-xs text-zinc-500">+{project.tools.length - 4}</li>
+                  )}
+                </ul>
+
+                <div className="mt-auto flex items-center gap-4 pt-5 text-sm">
+                  <button
+                    type="button"
+                    onClick={() => setSelected(project)}
+                    className="font-medium text-zinc-300 underline-offset-4 hover:text-white hover:underline"
+                  >
+                    Details
+                  </button>
+                  {project.link ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 font-medium text-primary hover:brightness-125"
+                    >
+                      Live site <ArrowUpRight className="h-4 w-4" />
+                    </a>
+                  ) : (
+                    <span className="text-zinc-500">Private / internal</span>
+                  )}
+                </div>
+              </div>
+            </article>
+          </Reveal>
+        ))}
       </div>
 
-      {/* Project Modal */}
-      {selectedProject && (
-        <ProjectModal isOpen={!!selectedProject} onClose={() => setSelectedProject(null)} project={selectedProject} />
-      )}
-    </section>
+      <ProjectModal project={selected} onClose={() => setSelected(null)} />
+    </Section>
   )
 }
-

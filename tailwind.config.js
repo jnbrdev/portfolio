@@ -13,14 +13,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "raleway": ["Raleway", "sans-serif"],
+        sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "var(--font-sans)", "sans-serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-      animation: {
-        "loop-scroll": "loop-scroll 30s linear infinite",
       },
       colors: {
         border: "hsl(var(--border))",
